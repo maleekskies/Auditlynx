@@ -13,7 +13,7 @@ app = FastAPI(
 # frontend origin(s) before deploying somewhere public.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://secops-toolkit-ecru.vercel.app", "https://cybertriage.vercel.app"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
