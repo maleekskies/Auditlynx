@@ -1,6 +1,8 @@
 const MODULES = [
   { id: 'headers', num: '01', name: 'Headers Checker', hint: 'HTTP config scan' },
   { id: 'phishing', num: '02', name: 'Phishing Analyzer', hint: 'Email triage' },
+  { id: 'dns', num: '03', name: 'DNS & Domain Recon', hint: 'Registration & DNS' },
+  { id: 'codescan', num: '04', name: 'Code Security Scanner', hint: 'App vulnerability check' },
 ]
 
 export default function Sidebar({ active, onSelect, mobileOpen, onClose }) {
