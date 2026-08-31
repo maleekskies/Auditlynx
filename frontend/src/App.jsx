@@ -2,6 +2,8 @@ import { useState } from 'react'
 import Sidebar from './components/Sidebar.jsx'
 import HeadersChecker from './components/HeadersChecker.jsx'
 import PhishingAnalyzer from './components/PhishingAnalyzer.jsx'
+import DnsRecon from './components/DnsRecon.jsx'
+import CodeScanner from './components/CodeScanner.jsx'
 
 export default function App() {
   const [active, setActive] = useState('headers')
@@ -32,7 +34,10 @@ export default function App() {
         </div>
 
         <main className="flex-1 px-4 py-6 md:px-8 md:py-10 overflow-y-auto overflow-x-hidden">
-          {active === 'headers' ? <HeadersChecker /> : <PhishingAnalyzer />}
+          {active === 'headers' && <HeadersChecker />}
+          {active === 'phishing' && <PhishingAnalyzer />}
+          {active === 'dns' && <DnsRecon />}
+          {active === 'codescan' && <CodeScanner />}
         </main>
       </div>
     </div>
