@@ -13,16 +13,12 @@ app = FastAPI(
 # frontend origin(s) before deploying somewhere public.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://secops-toolkit-ecru.vercel.app",
+        "https://cybertriage.vercel.app",
+        "https://auditlynx.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-app.include_router(headers.router, prefix="/api", tags=["headers"])
-app.include_router(phishing.router, prefix="/api", tags=["phishing"])
-
-
-@app.get("/api/health")
-def health_check():
-    return {"status": "ok"}
