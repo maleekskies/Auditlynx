@@ -3,6 +3,7 @@ const MODULES = [
   { id: 'phishing', num: '02', name: 'Phishing Analyzer', hint: 'Email triage' },
   { id: 'dns', num: '03', name: 'DNS & Domain Recon', hint: 'Registration & DNS' },
   { id: 'codescan', num: '04', name: 'Code Security Scanner', hint: 'App vulnerability check' },
+  { id: 'breach', num: '05', name: 'Breach Checker', hint: 'Email exposure check' },
 ]
 
 export default function Sidebar({ active, onSelect, mobileOpen, onClose }) {
@@ -65,19 +66,4 @@ export default function Sidebar({ active, onSelect, mobileOpen, onClose }) {
               >
                 <span className={`font-mono text-[11px] ${isActive ? 'text-accent' : 'text-muted'}`}>{m.num}</span>
                 <span className="flex-1">
-                  <div className={`text-sm font-medium ${isActive ? 'text-ink' : 'text-ink/80'}`}>{m.name}</div>
-                  <div className="text-[11px] text-muted font-mono">{m.hint}</div>
-                </span>
-              </button>
-            )
-          })}
-        </nav>
-
-        <div className="px-5 py-4 border-t border-border text-[11px] font-mono text-muted/70 leading-relaxed">
-          Heuristic tooling for triage.
-          <br />Always verify findings manually.
-        </div>
-      </aside>
-    </>
-  )
-}
+                  <div
