@@ -4,6 +4,7 @@ import HeadersChecker from './components/HeadersChecker.jsx'
 import PhishingAnalyzer from './components/PhishingAnalyzer.jsx'
 import DnsRecon from './components/DnsRecon.jsx'
 import CodeScanner from './components/CodeScanner.jsx'
+import BreachChecker from './components/BreachChecker.jsx'
 
 export default function App() {
   const [active, setActive] = useState('headers')
@@ -38,6 +39,7 @@ export default function App() {
           {active === 'phishing' && <PhishingAnalyzer />}
           {active === 'dns' && <DnsRecon />}
           {active === 'codescan' && <CodeScanner />}
+          {active === 'breach' && <BreachChecker />}
         </main>
       </div>
     </div>
