@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers import code_scanner, dns_recon, headers, phishing
+from app.routers import breach_checker, code_scanner, dns_recon, headers, phishing
 
 app = FastAPI(
     title="SecOps Toolkit API",
@@ -27,6 +27,7 @@ app.include_router(headers.router, prefix="/api", tags=["headers"])
 app.include_router(phishing.router, prefix="/api", tags=["phishing"])
 app.include_router(dns_recon.router, prefix="/api", tags=["dns_recon"])
 app.include_router(code_scanner.router, prefix="/api", tags=["code_scanner"])
+app.include_router(breach_checker.router, prefix="/api", tags=["breach_checker"])
 
 
 @app.get("/api/health")
